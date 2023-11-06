@@ -17,5 +17,20 @@ namespace First_Task_Simple_Inventory_Management_System
        
         }
 
+        public void ViewAllProducts()
+        {
+            if (productsList.Count > 0)
+            {
+                foreach (Product product in Inventory.productsList)
+                {
+                    Console.WriteLine($"Product Name: {product.Name}, Quantity: {product.Quantity}, Price: {product.Price}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Product List Is Empty");
+            }
+            }
+        }
+
     }
-}

@@ -15,3 +15,5 @@ Product product = new Product(name, quantity, price);
 Inventory inventory = new Inventory();
 
 inventory.AddProduct(product);
+
+inventory.ViewAllProducts();
