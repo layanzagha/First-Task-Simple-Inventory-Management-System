@@ -21,4 +21,4 @@ inventory.SearchProductByName(name);
 
 inventory.EditProductByName(name, newproduct);
 
-inventory.ViewAllProducts();
+inventory.Exit();

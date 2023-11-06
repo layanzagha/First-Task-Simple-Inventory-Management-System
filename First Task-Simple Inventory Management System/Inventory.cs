@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -110,5 +111,10 @@ namespace First_Task_Simple_Inventory_Management_System
             }
 
         }
+        public void Exit()
+        {
+            Environment.Exit(0);
+        }
+
     }
 }
