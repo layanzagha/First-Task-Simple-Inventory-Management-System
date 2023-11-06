@@ -81,5 +81,34 @@ namespace First_Task_Simple_Inventory_Management_System
             }
 
         }
+
+        public void EditProductByName(string productName , Product newProduct)
+        {
+            Product? oldProducted = null;
+            if (productsList.Count > 0)
+            {
+                foreach (Product product in productsList)
+                {
+                    if (product.Name == productName)
+                        oldProducted = product;
+                }
+                if (oldProducted != null)
+                {
+                    oldProducted.Name = newProduct.Name;
+                    oldProducted.Price = newProduct.Price;
+                    oldProducted.Quantity = newProduct.Quantity;
+                    Console.WriteLine($"{productName} has been edited");
+                }
+                else
+                {
+                    Console.WriteLine($"{productName} not found in the inventory.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Products List Is Empty");
+            }
+
+        }
     }
 }

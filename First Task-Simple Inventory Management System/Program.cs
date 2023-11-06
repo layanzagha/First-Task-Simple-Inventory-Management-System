@@ -12,8 +12,13 @@ string priceString = Console.ReadLine();
 int price = int.Parse(priceString);
 
 Product product = new Product(name, quantity, price);
+Product newproduct = new Product("tea", 10, 30);
 Inventory inventory = new Inventory();
 
 inventory.AddProduct(product);
 
 inventory.SearchProductByName(name);
+
+inventory.EditProductByName(name, newproduct);
+
+inventory.ViewAllProducts();
