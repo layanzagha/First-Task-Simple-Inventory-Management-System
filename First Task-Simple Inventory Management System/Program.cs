@@ -17,3 +17,5 @@ Inventory inventory = new Inventory();
 inventory.AddProduct(product);
 
 inventory.ViewAllProducts();
+
+inventory.DeleteProductByName(name);

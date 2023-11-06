@@ -9,19 +9,19 @@ namespace First_Task_Simple_Inventory_Management_System
 {
     public class Inventory
     {
-       public static List<Product> productsList = new List<Product>();
+        public static List<Product> productsList = new List<Product>();
 
         public void AddProduct(Product myProduct)
         {
             productsList.Add(myProduct);
-       
+
         }
 
         public void ViewAllProducts()
         {
             if (productsList.Count > 0)
             {
-                foreach (Product product in Inventory.productsList)
+                foreach (Product product in productsList)
                 {
                     Console.WriteLine($"Product Name: {product.Name}, Quantity: {product.Quantity}, Price: {product.Price}");
                 }
@@ -30,7 +30,25 @@ namespace First_Task_Simple_Inventory_Management_System
             {
                 Console.WriteLine("Product List Is Empty");
             }
+        }
+        public void DeleteProductByName(string productName)
+        {
+            Product? deletedPro = null;
+            foreach (Product product in productsList)
+            {
+                if (product.Name == productName)
+                    deletedPro = product;
+                
+            }
+            if (deletedPro != null)
+            {
+                productsList.Remove(deletedPro);
+                Console.WriteLine($"{deletedPro.Name} removed from the inventory.");
+            }
+            else
+            {
+                Console.WriteLine($"{productName} not found in the inventory.");
             }
         }
-
-    }
+     }
+}
